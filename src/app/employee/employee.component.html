@@ -1,0 +1,15 @@
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+     <input type="text" name="Employee Name"  ngModel placeholder="Name" required>
+     <br/><br/>
+     <input type="text" name="Employee ID" ngModel placeholder="ID" required>
+     <br/><br/>
+     <input type="number" name="Employee Age" ngModel placeholder="Age" required>
+     <br/><br/>
+     <button type="submit">submit</button>
+     <pre>{{f.value|json}}</pre>
+     <pre>valid:{{f.valid}}</pre>
+     <pre>Invalid:{{f.invalid}}</pre>
+        <pre>Touched:{{f.touched}}</pre>
+        <pre>UnTouched:{{f.untouched}}</pre>
+        <pre>Submitted:{{f.submitted}}</pre>
+    </form>

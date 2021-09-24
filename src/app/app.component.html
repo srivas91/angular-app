@@ -1,0 +1,57 @@
+<!-- <h3>Welcome to learn {{subject}}</h3>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+<input type="text" name="username" ngModel required><br/>
+<input type="password" name="password" ngModel><br/>
+<button type="submit">login</button>
+<pre>{{f.value|json}}</pre>
+<pre>touched:{{f.touched}}</pre>
+<pre>untouched:{{f.untouched}}</pre>
+<pre>valid:{{f.valid}}</pre>
+<pre>invalid:{{f.invalid}}</pre>
+<pre>submitted:{{f.submitted}}</pre>
+</form> -->
+
+<!--<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()" novalidate>
+ 
+  <p>
+    <label for="firstname">First Name </label>
+    <input type="text" id="firstname" name="firstname" formControlName="firstname">
+  </p>
+ 
+  <p>
+    <label for="lastname">Last Name </label>
+    <input type="text" id="lastname" name="lastname" formControlName="lastname">
+  </p>
+ 
+  <p>
+    <label for="email">Email </label>
+    <input type="text" id="email" name="email" formControlName="email">
+  </p>
+   
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+ 
+</form>-->
+<!--<a routerLink="/employee">Employee</a>-->
+<!--<a routerLink="/parent">Parent</a>
+<router-outlet></router-outlet>-->
+<!--<app-parent></app-parent>-->
+<input type="text" placeholder="search by empname..." [(ngModel)]="filterName" >
+<table border="5">
+  <tr>
+<th>Employee Id</th>
+<th>Employee Name</th>
+<th>Department</th>
+<th>Salary</th>
+</tr>
+<!-- <tr *ngFor="let i of emp.employee|filter:filterName"> -->
+<tr *ngFor="let i of emp.employee|filter:filterName|paginate: { itemsPerPage: 4, currentPage: page}">
+  <td>{{i.empid}}<br/></td>
+  <td>{{i.empname}}<br/></td>
+<td>{{i.dept}}<br/></td>
+<td>{{i.salary}}<br/></td>
+</tr>
+ </table>
+ <pagination-controls  (pageChange)="page = $event"></pagination-controls>
+ 
